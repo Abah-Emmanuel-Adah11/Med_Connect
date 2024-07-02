@@ -34,6 +34,7 @@ nav a {
 .product img {
     width: 100%;
     height: auto;
+    display: flex;
 }
 
  .cart-item {
