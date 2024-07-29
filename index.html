@@ -9,82 +9,99 @@
 <body>
     <header>
         <h1>MedConnect</h1>
+        <div class="nav-toggle">☰</div> <!-- Hamburger Icon -->
         <nav>
-            <a href="#Home">Home</a>
-            <a href="#Shop">Shop</a>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
             <a href="cart.html">Cart</a>
-            <a href="#Contact Us">Contact Us</a>
+            <a href="#contact">Contact Us</a>
         </nav>
     </header>
 
-    <div class="main">
-        <h2>Featured Products</h2>
-        <div class="product-grid">
-            <div class="product">
-	    <img src="image/supplement.jpg" alt="Drug 1">
-                <h3>Supplement</h3>
-                <p>$10.00</p>
-                <button>Add to Cart</button>
+    <main>
+        <section id="shop">
+            <h2>Featured Products</h2>
+            <div class="product-grid">
+                <div class="product">
+                    <img src="image/supplement.jpg" alt="Supplement">
+                    <h3>Supplement</h3>
+                    <p>$10.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="image/mednames.jpeg" alt="Anti-botics">
+                    <h3>Anti-botics</h3>
+                    <p>$15.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="image/weightloss.jpeg" alt="Weight Loss Drug">
+                    <h3>Weight Loss Drug</h3>
+                    <p>$29.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="image/brainformula.jpeg" alt="Brain Formula">
+                    <h3>Brain Formula</h3>
+                    <p>$30.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="image/amox.jpeg" alt="Amoxicillin">
+                    <h3>Amoxicillin</h3>
+                    <p>$29.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <!-- Add more products as needed -->
             </div>
-            <div class="product">
-                <img src="image/mednames.jpeg" alt="Drug 2">
-                <h3>Anti-botics</h3>
-                <p>$15.00</p>
-                <button>Add to Cart</button>
+        </section>
+
+        <section id="cart">
+            <h2>Shopping Cart</h2>
+            <div class="cart-item">
+                <span>Supplement</span>
+                <span>$10.00</span>
+                <button>Remove</button>
             </div>
-
-            <div class="product">
-                <img src="image/weightloss.jpeg" alt="Drug 2">
-                <h3>weight loss drug</h3>
-                <p>$29.00</p>
-                <button>Add to Cart</button>
+            <div class="cart-item">
+                <span>Anti-botics</span>
+                <span>$15.00</span>
+                <button>Remove</button>
             </div>
-
-            
-            <div class="product">
-                <img src="image/brainformula.jpeg" alt="Drug 2">
-                <h3>Brain Formula</h3>
-                <p>$30.00</p>
-                <button>Add to Cart</button>
+            <div class="cart-summary">
+                <p>Total: $25.00</p>
+                <button>Proceed to Checkout</button>
             </div>
+        </section>
 
-            <div class="product">
-                <img src="image/amox.jpeg" alt="Drug 2">
-                <h3>Amoxicllin</h3>
-                <p>$29.00</p>
-                <button>Add to Cart</button>
-            </div>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
 
 
+    </main>
 
-            <!-- Add more Drugs & Products as needed -->
-
-        </div>
-    </div>
 
     <footer>
         <p>Contact Us | Privacy Policy | Terms of Service</p>
-        <p>Follow us on social media: Infor@MedConnect</p>
+        <p>Follow us on social media: <a href="mailto:info@medconnect.com">info@medconnect.com</a></p>
     </footer>
 
-<!-- Cart Page Example -->
-
-    <div class="main">
-        <h2>Shopping Cart</h2>
-        <div class="cart-item">
-            <span>Supplement</span>
-            <span>$10.00</span>
-            <button>Remove</button>
-        </div>
-        <div class="cart-item">
-            <span>Anti-botics</span>
-            <span>$15.00</span>
-            <button>Remove</button>
-        </div>
-        <div class="cart-summary">
-            <p>Total: $25.00</p>
-            <button>Proceed to Checkout</button>
-        </div>
-    </div>
+    <script src="script.js" defer></script>
 </body>
 </html>

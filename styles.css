@@ -1,48 +1,252 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #C6E2B5;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header, footer {
-    background-color: #8BC34A;
-    padding: 10px;
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    position: relative;
+}
+
+.nav-toggle.active {
+    background-color: #555;
+}
+
+.nav-toggle::after {
+    content: "";
+}
+
+.nav-toggle.active::after {
+    content: "×";
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    gap: 1rem;
 }
 
 nav a {
-    margin: 0 15px;
+    color: white;
     text-decoration: none;
-    color: #333;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.main {
-    padding: 20px;
+nav a:hover {
+    background-color: #555;
+    color: #ffcc00;
 }
 
+/* Product Grid */
 .product-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 1rem;
 }
 
 .product {
     border: 1px solid #ddd;
-    padding: 10px;
-    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+    flex: 1 1 calc(25% - 1rem); /* Responsive: 4 items per row */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
-    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 0.5rem;
 }
 
- .cart-item {
+.product h3 {
+    margin: 0.5rem 0;
+}
+
+.product p {
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.product button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.product button:hover {
+    background-color: #218838;
+}
+
+.cart-item {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+    padding: 0.5rem;
+    border-bottom: 1px solid #ddd;
 }
 
 .cart-summary {
+    margin-top: 1rem;
     text-align: right;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ffcc00;
+}
+
+/* Contact Us Styles */
+#contact {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#contact h2 {
+    margin-bottom: 1rem;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .product {
+        flex: 1 1 calc(50% - 1rem); /* Responsive: 2 items per row */
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 3rem;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+    }
+
+    nav.nav-open {
+        display: flex;
+    }
+
+    nav a {
+        padding: 1rem;
+        border-bottom: 1px solid #444;
+    }
+
+    nav a:hover {
+        background-color: #555;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    #contact-form {
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        flex: 1 1 100%; /* Responsive: 1 item per row */
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
 }
